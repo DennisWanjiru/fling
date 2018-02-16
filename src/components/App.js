@@ -15,9 +15,7 @@ class App extends Component {
             selected: null
         }
 
-
         this.movieSearch();
-
     }
 
     movieSearch(movie='good lie') {
