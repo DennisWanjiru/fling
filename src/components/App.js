@@ -11,7 +11,8 @@ class App extends Component {
         super(props)
 
         this.state = {
-            movies: []
+            movies: [],
+            selected: null
         }
 
 
@@ -19,18 +20,27 @@ class App extends Component {
 
     }
 
-    movieSearch(movie='Jackie Chan') {
+    movieSearch(movie='good lie') {
         tmdb.searchMovie({ query: movie }, (err, movies) => {
             this.setState({movies: movies.results})
         });
     }
 
+    selectedMovie(id) {
+        tmdb.movieInfo({ id: id }, (err, selected) => {
+            this.setState({selected})
+        });
+    }
+
     render () {
-        console.log(this.state.movies)
         return (
             <div>
-                {/* <Home movies={this.state.movies} /> */}
-                <MovieDetails movie={this.state.movies[0]} />
+                <div className="col m6">
+                    <Home movies={this.state.movies} onSelectMovie={this.selectedMovie.bind(this)} />
+                </div>
+                <div className="col m6">
+                    <MovieDetails movie={this.state.selected} />
+                </div>
             </div>
         )
     }

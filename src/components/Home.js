@@ -12,9 +12,8 @@ const Home = (props) => {
 
     const movies = props.movies.map(movie => {
         return (
-            <Movie movie={movie} key={movie.id} />
+            <Movie movie={movie} key={movie.id} onSelectMovie={props.onSelectMovie} />
         )
-
     })
 
     return (

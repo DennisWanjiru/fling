@@ -6,7 +6,8 @@ const Movie = (props) => {
 
     return (
         <div className="col m2 s6 m-b-small">
-             <div className="card card__movie hoverable">
+             <div className="card card__movie hoverable"
+              onClick={() => props.onSelectMovie(props.movie.id)}>
                 <img src={poster} alt={props.movie.original_title} className="responsive-img"/>
             </div>
         </div>
