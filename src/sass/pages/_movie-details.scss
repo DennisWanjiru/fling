@@ -1,0 +1,39 @@
+.movie {
+    &__banner {
+        height: 65vh;
+        width: 100vw;
+        background-image: url('./images/nat-6.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__details {
+        .col {
+            position: relative;
+        }
+
+        &--image {
+            position: absolute;
+            top: -5.7rem;
+            right: 0;
+            animation: moveInTopLeft 2s ease;
+        }
+
+        &--title {
+            font-size: 2.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        &--release {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+        }
+
+        &--description {
+            font-size: 1.5rem;
+        }
+    }
+}

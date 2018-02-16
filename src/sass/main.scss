@@ -1,0 +1,16 @@
+@import "vendor/materialize";
+
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/typography";
+@import "base/resets";
+@import "base/utilities";
+
+@import "components/movie-card";
+
+@import "layout/header";
+
+@import "pages/home";
+@import "pages/movie-details";
