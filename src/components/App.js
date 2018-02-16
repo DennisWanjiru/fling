@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 import Header from './Header'
 import Home from './Home';
@@ -16,6 +17,7 @@ class App extends Component {
         }
 
         this.movieSearch();
+        const num = 3454;
     }
 
     movieSearch(movie='good lie') {
@@ -31,14 +33,28 @@ class App extends Component {
     }
 
     render () {
+        console.log(this.state.selected)
         return (
             <div>
-                <div className="col m6">
-                    <Home movies={this.state.movies} onSelectMovie={this.selectedMovie.bind(this)} />
+                <Switch>
+                    <Route exact path="/" render={(props) => {
+                        return (
+                            <Home movies={this.state.movies}
+                             onSelectMovie={this.selectedMovie.bind(this)} />
+                        )
+                    }} />
+
+                    <Route path="/details" render={() => {
+                        return (
+                            <MovieDetails movie={this.state.selected} />
+                        )
+                    }} />
+                </Switch>
+
+                {/* <div className="col m6">
                 </div>
                 <div className="col m6">
-                    <MovieDetails movie={this.state.selected} />
-                </div>
+                </div> */}
             </div>
         )
     }
