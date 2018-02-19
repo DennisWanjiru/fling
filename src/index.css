@@ -6893,7 +6893,7 @@ html {
   height: 65vh;
   width: 100vw;
   background-image: url("./images/nat-6.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
 .movie__details .col {

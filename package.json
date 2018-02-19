@@ -1,8 +1,10 @@
 {
+  "homepage": " https://denniswanjiru.github.io/fling/",
   "name": "imax",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "imdb-api": "^3.1.2",
     "materialize-css": "^0.100.2",
     "moment": "^2.20.1",
@@ -14,6 +16,8 @@
   },
   "scripts": {
     "watch": "sass --watch src/sass/main.scss:src/index.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

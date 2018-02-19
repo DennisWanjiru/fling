@@ -20,7 +20,7 @@ class App extends Component {
         const num = 3454;
     }
 
-    movieSearch(movie='good lie') {
+    movieSearch(movie='transporter') {
         tmdb.searchMovie({ query: movie }, (err, movies) => {
             this.setState({movies: movies.results})
         });
@@ -50,11 +50,6 @@ class App extends Component {
                         )
                     }} />
                 </Switch>
-
-                {/* <div className="col m6">
-                </div>
-                <div className="col m6">
-                </div> */}
             </div>
         )
     }

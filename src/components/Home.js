@@ -11,12 +11,15 @@ const Home = (props) => {
         return <div>Loading...</div>
     }
 
-    const movies = props.movies.map(movie => {
+    const data = props.movies;
+    const movies = data.map(movie => {
         return (
             <Movie movie={movie} key={movie.id} onSelectMovie={props.onSelectMovie} />
         )
     })
 
+    const id = data.map(m => m.id)
+    console.log(movies)
     return (
         <div>
             <Header />
